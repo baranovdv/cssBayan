@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+img {
+    margin: 0;   
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* min-width: 1200px; */
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 109px;
+}
+
+.meme-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: .1rem solid rgba(0, 0, 0, 0.1);
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.meme-block__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.meme-block__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.meme-block__button {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.meme-block__img {
+    background-image: url(./assets/img/deadline.svg);
+    height: 300px;
+    width: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
