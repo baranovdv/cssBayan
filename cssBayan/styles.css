@@ -25,6 +25,8 @@ body {
     flex-direction: column;
     /* min-width: 1200px; */
     margin: 0 auto;
+
+    background-color: rgba(255, 228, 196, 0.5)
 }
 
 .container {
@@ -39,8 +41,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    border-top: .1rem solid rgba(0, 0, 0, 0.1);
-    border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.main__meme-block {
+    color: blue;
 }
 
 .meme-block__container {
@@ -49,43 +53,93 @@ body {
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
+    /* border-top: .1rem solid rgba(0, 0, 0, 0.1); */
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.main__meme-block:hover {
+    color: black;
+}
+
+.main__meme-block:active {
+    color: blue;
+}
+
+.meme-block__container:hover .meme-block__title .meme-block__button {
+    transform: rotate(45deg);
+}
+
+.meme-block__container:hover .meme-block__img {
+    height: 300px;
+    background-size: 100% 100%;
+    opacity: 1;
+}
+
+.meme-block__container:active {
+    color: blue;
+    opacity: .5;
 }
 
 .meme-block__title {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
-    cursor: pointer;
     align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
+    transition: all .5s;
+    cursor: pointer;
 }
 
 .meme-block__button {
     font-size: 3rem;
     font-weight: 700;
+    transition: all .5s;
 }
 
 .meme-block__img {
-    display: none;
+    /* display: none; */
     background-image: url(./assets/img/deadline.svg);
-    height: 300px;
+    /* height: 300px; */
     width: 100%;
     background-position-x: center;
-    background-size: contain;
+    background-size: 0% 0%;
+    opacity: 0;
     background-repeat: no-repeat;
+    transition: all .5s;
 }
 
-.check:checked + .meme-block__title {
-    color: aqua;
+.meme1 {
+    background-image: url(./assets/img/deadline.svg);
 }
 
-.check:checked + .meme-block__title .meme-block__button {
-    color: red;
+.meme2 {
+    background-image: url(./assets/img/everythingworks.svg);
+}
+
+.meme3 {
+    background-image: url(./assets/img/bug.svg);
+}
+
+.meme4 {
+    background-image: url(./assets/img/nomentor.svg);
+}
+
+.check:checked + .meme-block__container .meme-block__title {
+    color: black;
+}
+
+.check:checked + .meme-block__container .meme-block__title .meme-block__button {
+    color: black;
     transform: rotate(45deg);
 }
 
 
-.check:checked + .meme-block__title + .meme-block__img {
-    display: block;
+.check:checked + .meme-block__container .meme-block__title .meme-block__img {
+    /* display: block; */
+    height: 300px;
+    background-size: 100% 100%;
+    opacity: 1;
 }
