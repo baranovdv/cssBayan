@@ -16,6 +16,10 @@ img {
     margin: 0;   
 }
 
+input {
+    display: none;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -42,11 +46,17 @@ body {
 .meme-block__container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     align-items: center;
 }
 
 .meme-block__title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -57,9 +67,25 @@ body {
 }
 
 .meme-block__img {
+    display: none;
     background-image: url(./assets/img/deadline.svg);
     height: 300px;
-    width: 300px;
+    width: 100%;
+    background-position-x: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.check:checked + .meme-block__title {
+    color: aqua;
+}
+
+.check:checked + .meme-block__title .meme-block__button {
+    color: red;
+    transform: rotate(45deg);
+}
+
+
+.check:checked + .meme-block__title + .meme-block__img {
+    display: block;
 }
