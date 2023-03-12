@@ -30,9 +30,9 @@ body {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 80%;
     margin: 0 auto;
-    padding: 0 109px;
+    /* padding: 0 109px; */
 }
 
 .meme-block {
@@ -40,7 +40,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: .5rem 0;
 }
 
 .main__meme-block {
@@ -62,16 +62,17 @@ body {
     color: black;
 }
 
-.main__meme-block:active {
-    color: blue;
+.main__meme-block:hover .meme-block__container .meme-block__title .meme-block__button {
+    opacity: 1;
 }
+
 
 .meme-block__container:hover .meme-block__title .meme-block__button {
     transform: rotate(45deg);
 }
 
 .meme-block__container:hover .meme-block__img {
-    height: 300px;
+    height: 40vh;
     background-size: 100% 100%;
     opacity: 1;
 }
@@ -94,6 +95,7 @@ body {
 }
 
 .meme-block__button {
+    opacity: 0;
     font-size: 3rem;
     font-weight: 700;
     transition: all .5s;
@@ -102,7 +104,6 @@ body {
 .meme-block__img {
     /* display: none; */
     background-image: url(./assets/img/deadline.svg);
-    /* height: 300px; */
     width: 100%;
     background-position-x: center;
     background-size: 0% 0%;
@@ -127,6 +128,10 @@ body {
     background-image: url(./assets/img/nomentor.svg);
 }
 
+.meme5 {
+    background-image: url(./assets/img/git.svg);
+}
+
 .check:checked + .meme-block__container .meme-block__title {
     color: black;
 }
@@ -138,8 +143,36 @@ body {
 
 
 .check:checked + .meme-block__container .meme-block__title .meme-block__img {
-    /* display: block; */
-    height: 300px;
+    height: 40vh;
     background-size: 100% 100%;
     opacity: 1;
+}
+
+@media (max-width: 830px) {
+    .meme-block__title {
+        font-size: 1.2rem;
+    }
+    
+    .meme-block__button {
+        font-size: 2rem;
+    }
+
+    .meme-block__title {
+        display: block;
+    }
+
+    .meme-block__button {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 330px) {
+    .meme-block__title {
+        font-size: 1rem;
+    }
+    
+    .meme-block__button {
+        font-size: 1.5rem;
+    }
 }
