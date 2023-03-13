@@ -9,24 +9,26 @@ button {
     margin: 0;
     border: 0;
     background-color: transparent;
-    cursor: pointer;
 }
 
 img {
     margin: 0;   
 }
 
+input {
+    display: none;
+}
+
 body {
     display: flex;
     flex-direction: column;
-    /* min-width: 1200px; */
     margin: 0 auto;
+    background-color: rgba(255, 228, 196, 0.5)
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 80%;
     margin: 0 auto;
-    padding: 0 109px;
 }
 
 .meme-block {
@@ -34,32 +36,172 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    border-top: .1rem solid rgba(0, 0, 0, 0.1);
-    border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+    padding: .5rem 0;
+}
+
+.meme-block {
+    color: black;
 }
 
 .meme-block__container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     align-items: center;
+    /* border-top: .1rem solid rgba(0, 0, 0, 0.1); */
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.meme-block__container:first-of-type {
+    border-top: .1rem solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+.meme-block__container:active {
+    color: blue;
+    opacity: .5;
 }
 
 .meme-block__title {
-    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    font-size: 1.8rem;
     font-weight: 700;
+    transition: all .5s;
+
 }
 
 .meme-block__button {
-    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    font-size: 3.5rem;
     font-weight: 700;
+    transition: all .5s;
 }
 
 .meme-block__img {
+    /* display: none; */
     background-image: url(./assets/img/deadline.svg);
-    height: 300px;
-    width: 300px;
-    background-size: contain;
+    width: 100%;
+    background-position-x: center;
+    background-size: 0% 0%;
+    opacity: 0;
     background-repeat: no-repeat;
+    transition: all .5s;
 }
+
+.meme1 {
+    background-image: url(./assets/img/deadline.svg);
+}
+
+.meme2 {
+    background-image: url(./assets/img/everythingworks.svg);
+}
+
+.meme3 {
+    background-image: url(./assets/img/bug.svg);
+}
+
+.meme4 {
+    background-image: url(./assets/img/nomentor.svg);
+}
+
+.meme5 {
+    background-image: url(./assets/img/git.svg);
+}
+
+.check:checked + .meme-block__container .meme-block__title {
+    color: black;
+}
+
+.check:checked + .meme-block__container .meme-block__title .meme-block__button {
+    color: black;
+    transform: rotate(45deg);
+}
+
+
+.check:checked + .meme-block__container .meme-block__title .meme-block__img {
+    height: 40vh;
+    background-size: 100% 100%;
+    opacity: 1;
+}
+
+@media (max-width: 1920px) {
+    .meme-block__title {
+        font-size: 1.5rem;
+    }
+    
+    .meme-block__button {
+        font-size: 3rem;
+    }
+}
+
+
+@media (max-width: 830px) {
+    .meme-block__title {
+        font-size: 1.2rem;
+    }
+    
+    .meme-block__button {
+        font-size: 2rem;
+    }
+    
+}
+
+@media (max-width: 330px) {
+    .meme-block__title {
+        font-size: 1rem;
+    }
+    
+    .meme-block__button {
+        font-size: 1.5rem;
+    }
+}
+
+@media (hover: hover) {
+    
+    .meme-block__title {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .meme-block__title {
+        display: flex;
+    }
+
+    .meme-block {
+        color: blue;
+    }
+
+    .main__meme-block .meme-block__container .meme-block__title .meme-block__button {
+        opacity: 0;
+    }
+
+    .main__meme-block:hover {
+        color: black;
+    }
+    
+    .main__meme-block:hover .meme-block__container .meme-block__title .meme-block__button {
+        opacity: 1;
+    }
+    
+    
+    .meme-block__container:hover .meme-block__title .meme-block__button {
+        transform: rotate(45deg);
+    }
+    
+    .meme-block__container:hover .meme-block__img {
+        height: 40vh;
+        background-size: 100% 100%;
+        opacity: 1;
+    }
+}
+
+
