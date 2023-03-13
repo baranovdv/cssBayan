@@ -71,7 +71,7 @@ body {
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     transition: all .5s;
 
@@ -81,7 +81,7 @@ body {
     display: flex;
     justify-content: center;
     opacity: 1;
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     transition: all .5s;
 }
@@ -132,6 +132,17 @@ body {
     background-size: 100% 100%;
     opacity: 1;
 }
+
+@media (max-width: 1920px) {
+    .meme-block__title {
+        font-size: 1.5rem;
+    }
+    
+    .meme-block__button {
+        font-size: 3rem;
+    }
+}
+
 
 @media (max-width: 830px) {
     .meme-block__title {
